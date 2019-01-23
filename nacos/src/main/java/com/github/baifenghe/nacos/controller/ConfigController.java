@@ -16,10 +16,19 @@ public class ConfigController {
 
     @Value("${useLocalCache:false}")
     private boolean useLocalCache;
+    @Value("${user.name}")
+    private String userName;
+    @Value("${user.age}")
+    private int age;
 
     @RequestMapping("/get")
     public boolean get() {
         return useLocalCache;
+    }
+
+    @RequestMapping("/test")
+    public String test() {
+        return "name: " + userName + ", age: " + age;
     }
 
 }
