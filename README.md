@@ -7,19 +7,21 @@
 
 2. [使用Nacos作为配置中心](#使用Nacos作为配置中心)
 
+3. [Sentinel](#Sentinel)
 
 
 
 ### 已包含的组件
 
-- Nacos：阿里巴巴开源产品，一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台
+- Nacos：易于构建云原生应用的动态服务发现、配置管理和服务管理平台
 
 - Feign：声明式服务调用
 
+- Sentinel：流量控制、熔断降级
 
-### 待添加组件
 
-- Sentinel：阿里巴巴开源产品，把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性
+
+
 
 
 
@@ -62,3 +64,9 @@ user.age=17
 
 
 更多配置请移步 [官方文档](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/nacos-example/nacos-config-example/readme-zh.md)
+
+
+### Sentinel
+
+下载地址： [Sentinel](https://github.com/alibaba/Sentinel/releases)
+
