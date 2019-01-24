@@ -1,6 +1,6 @@
 package com.github.baifenghe.consumer.controller;
 
-import com.github.baifenghe.consumer.feign.ConsumerRemote;
+import com.github.baifenghe.consumer.feign.ConsumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConsumerController {
 
     @Autowired
-    private ConsumerRemote consumerRemote;
+    private ConsumeService consumeService;
 
     @RequestMapping("echo")
     public String echo() {
-        return consumerRemote.echo();
+        return consumeService.echo();
     }
 
 }
