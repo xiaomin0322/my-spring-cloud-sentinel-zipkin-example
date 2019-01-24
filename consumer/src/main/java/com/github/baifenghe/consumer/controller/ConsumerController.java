@@ -1,23 +1,24 @@
 package com.github.baifenghe.consumer.controller;
 
+import com.github.baifenghe.consumer.feign.ConsumerRemote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * @author bfh
- * @since 2018/12/20
+ * @since 1.0.0
  */
 @RestController
 @RequestMapping("consumer")
 public class ConsumerController {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private ConsumerRemote consumerRemote;
 
-    @RequestMapping("hello")
-    public String hello() {
-        return restTemplate.getForObject("http://service-provider/test/hello/", String.class);
+    @RequestMapping("echo")
+    public String echo() {
+        return consumerRemote.echo();
     }
+
 }

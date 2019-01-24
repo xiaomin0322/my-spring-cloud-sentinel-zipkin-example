@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@RequestMapping("test")
-public class HelloController {
+@RequestMapping("provider")
+public class ProviderController {
 
-    @RequestMapping("hello")
-    public String hello() {
-        return "hello, nacos";
+    @RequestMapping("echo")
+    public String echo() {
+        return "hello nacos";
     }
 }
