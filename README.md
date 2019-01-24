@@ -1,7 +1,27 @@
-# spring-cloud-alibaba 学习案例
+# Spring Cloud Alibaba 学习案例
 
 
-## 准备工作
+## 目录
+
+1. [安装nacos](#安装nacos)
+
+2. [使用Nacos作为配置中心](#使用Nacos作为配置中心)
+
+
+
+
+### 已包含的组件
+
+- Nacos：阿里巴巴开源产品，一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台
+
+- Feign：声明式服务调用
+
+
+### 待添加组件
+
+- Sentinel：阿里巴巴开源产品，把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性
+
+
 
 
 ### 安装nacos
@@ -22,7 +42,7 @@ docker run -d --name nacos-standalone -e MODE=standalone -p 8848:8848 nacos/naco
 ### 使用Nacos作为配置中心
 
 
-登入控制台，在配置列表中新建配置文件 nacos-server.properties
+登入控制台，在配置列表中新建配置文件 `nacos-server.properties`
 
 注意：
 - 命名规范： ` ${prefix} - ${spring.profiles.active} . ${file-extension} `
@@ -38,7 +58,6 @@ user.id=1
 user.name=james
 user.age=17
 ~~~
-
 
 
 
