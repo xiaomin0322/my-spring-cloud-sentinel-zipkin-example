@@ -3,7 +3,7 @@
 
 ## 目录
 
-1. [安装nacos](#安装nacos)
+1. [安装Nacos](#安装Nacos)
 
 2. [使用Nacos作为配置中心](#使用Nacos作为配置中心)
 
@@ -13,7 +13,7 @@
 
 ### 已包含的组件
 
-- Nacos：易于构建云原生应用的动态服务发现、配置管理和服务管理平台
+- Nacos：服务发现、配置管理和服务管理
 
 - Feign：声明式服务调用
 
@@ -25,20 +25,14 @@
 
 
 
-
-### 安装nacos
+### 安装Nacos
 
 下载地址： [nacos](https://github.com/alibaba/nacos/releases)
+docker：`docker run -d --name nacos-standalone -e MODE=standalone -p 8848:8848 nacos/nacos-server:latest`
+访问地址：`http://127.0.0.1:8848/nacos/`
 
 
-docker方式：
 
-~~~
-docker run -d --name nacos-standalone -e MODE=standalone -p 8848:8848 nacos/nacos-server:latest
-~~~
-
-
-启动后访问 `http://127.0.0.1:8848/nacos/` ，进入服务管理页面。
 
 
 ### 使用Nacos作为配置中心
@@ -55,18 +49,20 @@ docker run -d --name nacos-standalone -e MODE=standalone -p 8848:8848 nacos/naco
 
 properties内容如下：
 
-~~~properties
+~~~
 user.id=1
 user.name=james
 user.age=17
 ~~~
 
 
-
 更多配置请移步 [官方文档](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/nacos-example/nacos-config-example/readme-zh.md)
+
+
 
 
 ### Sentinel
 
 下载地址： [Sentinel](https://github.com/alibaba/Sentinel/releases)
-
+启动方式：`java -Dserver.port=18080 -Dcsp.sentinel.dashboard.server=localhost:18080 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar`
+访问地址：`http://localhost:18080/#/dashboard/home`
