@@ -1,7 +1,7 @@
-# Spring Cloud Alibaba 学习案例
+# Spring Cloud Alibaba
 
 
-## 目录
+### 目录
 
 1. [安装Nacos](#安装Nacos)
 
@@ -28,7 +28,9 @@
 ### 安装Nacos
 
 下载地址： [nacos](https://github.com/alibaba/nacos/releases)
+
 docker：`docker run -d --name nacos-standalone -e MODE=standalone -p 8848:8848 nacos/nacos-server:latest`
+
 访问地址：`http://127.0.0.1:8848/nacos/`
 
 
@@ -64,5 +66,7 @@ user.age=17
 ### Sentinel
 
 下载地址： [Sentinel](https://github.com/alibaba/Sentinel/releases)
+
 启动方式：`java -Dserver.port=18080 -Dcsp.sentinel.dashboard.server=localhost:18080 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar`
+
 访问地址：`http://localhost:18080/#/dashboard/home`
