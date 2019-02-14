@@ -1,4 +1,4 @@
-# Spring Cloud Alibaba 学习案例
+# Spring Cloud Alibaba
 
 
 ## 目录
@@ -70,3 +70,11 @@ user.age=17
 
 下载地址： [Sentinel](https://github.com/alibaba/Sentinel/releases)
 
+
+启动方式：
+~~~
+java -Dserver.port=8889 -Dcsp.sentinel.dashboard.server=localhost:8889 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar
+~~~
+
+
+访问地址：`http://localhost:8889`
