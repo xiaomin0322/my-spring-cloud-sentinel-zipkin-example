@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author bfh
  * @since 1.0.0
  */
-@FeignClient(name = "discovery-provider", fallback = ConsumeService.EchoServiceFallback.class, configuration = ConsumeService.FeignConfiguration.class)
-public interface ConsumeService {
+@FeignClient(name = "discovery-provider", fallback = ConsumeRemote.EchoServiceFallback.class, configuration = ConsumeRemote.FeignConfiguration.class)
+public interface ConsumeRemote {
 
     @RequestMapping("/provider/echo")
     String echo();
-
 
     class FeignConfiguration {
         @Bean
@@ -22,7 +21,7 @@ public interface ConsumeService {
         }
     }
 
-    class EchoServiceFallback implements ConsumeService {
+    class EchoServiceFallback implements ConsumeRemote {
         @Override
         public String echo() {
             return "echo fallback";

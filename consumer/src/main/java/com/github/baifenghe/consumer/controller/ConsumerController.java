@@ -1,6 +1,7 @@
 package com.github.baifenghe.consumer.controller;
 
-import com.github.baifenghe.consumer.feign.ConsumeService;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.github.baifenghe.consumer.feign.ConsumeRemote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,9 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConsumerController {
 
     @Autowired
-    private ConsumeService consumeService;
+    private ConsumeRemote consumeService;
 
     @RequestMapping("echo")
+    @SentinelResource("echo")
     public String echo() {
         return consumeService.echo();
     }
