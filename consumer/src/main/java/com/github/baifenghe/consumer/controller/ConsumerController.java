@@ -19,7 +19,7 @@ public class ConsumerController {
 
     @RequestMapping("echo")
     @SentinelResource("echo")
-    public String echo() {
+    public String echo2() {
     	try {
     		String s = consumeService.echo();
     		return s;
