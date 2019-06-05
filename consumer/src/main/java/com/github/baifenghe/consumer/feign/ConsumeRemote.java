@@ -16,6 +16,10 @@ import feign.Retryer;
 @FeignClient(name = "discovery-provider", url = "http://127.0.0.1:18082", fallback = ConsumeRemote.EchoServiceFallback.class, configuration = ConsumeRemote.FeignConfiguration.class)
 public interface ConsumeRemote {
 
+	/**
+	 * Sentinel会给该方法加个资源名称
+	 * @return
+	 */
 	@RequestMapping("/provider/echo")
 	String echo();
 
