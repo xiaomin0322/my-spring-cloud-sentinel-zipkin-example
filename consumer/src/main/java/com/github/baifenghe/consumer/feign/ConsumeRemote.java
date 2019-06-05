@@ -17,7 +17,7 @@ import feign.Retryer;
 public interface ConsumeRemote {
 
 	/**
-	 * Sentinel会给该方法加个资源名称.name: GET:http://127.0.0.1:18082/provider/echo
+	 * Sentinel会给该方法加个资源名称.name: GET:http://127.0.0.1:18082/provider/echo.如果限流异常了久会调用EchoServiceFallback
 	 * @return
 	 */
 	@RequestMapping("/provider/echo")
