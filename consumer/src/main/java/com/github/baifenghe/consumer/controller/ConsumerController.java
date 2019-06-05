@@ -20,7 +20,13 @@ public class ConsumerController {
     @RequestMapping("echo")
     @SentinelResource("echo")
     public String echo() {
-        return consumeService.echo();
+    	try {
+    		String s = consumeService.echo();
+    		return s;
+    	}catch (Exception e) {
+		   e.printStackTrace();
+		   return e.getMessage();
+		}
     }
 
 }
