@@ -13,6 +13,8 @@ public class ProviderController {
 
     @RequestMapping("echo")
     public String echo() {
-        return "hello nacos";
+    	System.out.println("provider echo>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    	throw new RuntimeException();
+        //return "hello nacos";
     }
 }
